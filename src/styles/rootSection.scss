@@ -1,0 +1,23 @@
+body, .rootSection {
+  // 지역 변수 (Scope Variables)
+  // 참고: https://sass-lang.com/documentation/variables#scope
+  $degree: 0deg;
+  $start-position: 23.8%;
+  $end-position: 92%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100vh;
+  margin: 0;
+  
+  background-image: linear-gradient(
+    $degree,
+    getGradientColor('start') $start-position,
+    getGradientColor('end') $end-position
+  );
+
+  font-family: 'GmarketSansLight', sans-serif;
+}

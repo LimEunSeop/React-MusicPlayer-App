@@ -1,0 +1,14 @@
+// CSS Grid 모듈 사용 설정
+/* autoprefixer grid: autoplace */
+
+// PostCSS Normalize (normalize.css) 사용 설정
+@import-normalize;
+
+// 환경 구성
+@import "./config.scss";
+// 사용자 정의 브라우저 초기화 설정 (normalize.css 덮어쓰기)
+@import "./custom-reset.scss";
+// 웹 폰트
+@import "./font.scss";
+// 루트 섹션
+@import "./rootSection.scss";

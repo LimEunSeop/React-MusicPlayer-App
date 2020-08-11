@@ -1,0 +1,93 @@
+// --------------------------------------------------------------------------
+// 컬러 맵(Color Map)
+// 참고: https://sass-lang.com/documentation/modules/map
+
+$colors: (
+ 
+  'point': #ffe657,
+  'vivid-white': #fefcfd,
+  
+  'gradients': (
+    'start': #f7f7f7,
+    'end': #fff6cb
+  ),
+
+  'button': (
+    'normal': #dfdddb,
+    'big': #d0cdc2
+  ),
+
+  'shadow': rgba(#fff6cb, 0.6),
+
+  'progress-bar': #fcf5cf,
+
+  'info-bg': rgba(#ffffff, 0.5),
+
+  'cover': rgba(#e8ca92, 0.3)
+
+);
+
+// --------------------------------------------------------------------------
+// 유틸리티 함수
+// 참고: https://sass-lang.com/documentation/at-rules/function
+
+@function getColor($key, $map: $colors) {
+  @return map-get($map, $key);
+}
+
+@function getGradientColor($key: 'start') {
+  @return map-get(getColor('gradients', $colors), $key);
+}
+
+@function getButtonColor($key: 'normal') {
+  @return map-get(getColor('button', $colors), $key);
+}
+
+// 텍스트 대체 함수
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+
+// --------------------------------------------------------------------------
+// 믹스인
+// 참고: https://sass-lang.com/documentation/at-rules/mixin
+
+// font-face 믹스인 (https://bit.ly/2VO47Tq)
+@mixin font-face(
+  $name, $path, 
+  $weight: null, 
+  $style: null, 
+  $exts: eot woff woff2 ttf svg
+) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}

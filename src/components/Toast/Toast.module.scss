@@ -1,0 +1,95 @@
+// --------------------------------------------------------------------------
+// Toast.module.scss
+// Module CSS를 사용하는 이유 → 간단하지만, 고유한(hash) 클래스 이름 설정(충돌 방지)
+// --------------------------------------------------------------------------
+
+/*
+
+  zone
+    group [,open]
+      message
+      (close) button
+
+*/
+
+// 변수 -----------------------------------------------------------------------
+
+$edge-gap: 20px;
+
+$point-color: #ffe15b; // get-color('point')
+$group-bg-color: #111;
+$group-fg-color: #fff;
+
+$easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+// --------------------------------------------------------------------------
+
+
+.zone {
+  position: fixed;
+  z-index: 10000;
+
+  &.topLeft {
+    top: $edge-gap;
+    left: $edge-gap;
+  }
+
+  // 기본 값
+  &.topRight {
+    top: $edge-gap;
+    right: $edge-gap;
+  }
+  
+  &.bottomLeft {
+    bottom: $edge-gap;
+    left: $edge-gap;
+  }
+  
+  &.bottomRight {
+    bottom: $edge-gap;
+    right: $edge-gap;
+  }
+}
+
+.group {
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  margin-bottom: 0;
+  padding: 0;
+  border-radius: 4px;
+  background: $group-bg-color;
+  color: $group-fg-color;
+  transform: translate(0, 50%) scale(0);
+  transition: all 0.5s $easeOutQuint;
+
+  *[href] {
+    text-decoration: none;
+    color: $point-color;
+  }
+
+  &.open {
+    opacity: 1;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 3.2em 7em 1em 2em;
+    transform: none;
+  }
+  
+}
+
+.message {
+  margin: 0 0 0.3em;
+  font-size: 1.3rem;
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 0;
+  font-size: 20px;
+  background: transparent;
+  color: inherit;
+}

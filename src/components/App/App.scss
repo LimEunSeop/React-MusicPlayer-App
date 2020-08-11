@@ -1,0 +1,21 @@
+::selection {
+  background: transparent;
+  color: #97872b;
+}
+
+html {
+  font-size: 10px;
+}
+
+body,
+body *,
+body::before,
+body::after,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+#reactApp {
+  text-align: center;
+}

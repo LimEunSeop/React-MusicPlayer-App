@@ -1,0 +1,55 @@
+{
+  "name": "Music Playlist",
+  "author": "yamoo9",
+  "version": "0.0.2",
+  "playlist": [
+    {
+      "title": "South Of The River",
+      "singer": "Tom Misch",
+      "src": "/media/music/Tom Misch - South Of The River.mp3",
+      "cover": "/media/cover/Tom Misch - South Of The River.jpg"
+    },
+    {
+      "title": "What If I Go",
+      "singer": "Mura Masa",
+      "src": "/media/music/Mura Masa - What If I Go.mp3",
+      "cover": "/media/cover/Mura Masa - What If I Go.jpg"
+    },
+    {
+      "title": "On My Mind",
+      "singer": "Jorja Smith X Preditah",
+      "src": "/media/music/Jorja Smith X Preditah - On My Mind.mp3",
+      "cover": "/media/cover/Jorja Smith X Preditah - On My Mind.jpg"
+    },
+    {
+      "title": "Bambi",
+      "singer": "Hippo Campus",
+      "src": "/media/music/Hippo Campus - Bambi.mp3",
+      "cover": "/media/cover/Hippo Campus - Bambi.jpg"
+    },
+    {
+      "title": "The Palisades",
+      "singer": "Childish Gambino (Ft.Christian Rich)",
+      "src": "/media/music/Childish Gambino (Ft.Christian Rich) - The Palisades.mp3",
+      "cover": "/media/cover/Childish Gambino (Ft.Christian Rich) - The Palisades.jpg"
+    },
+    {
+      "title": "Cigarettes & Cush",
+      "singer": "Stormazy (Ft.Kehlani)",
+      "src": "/media/music/Stormazy (Ft.Kehlani) - Cigarettes & Cush.mp3",
+      "cover": "/media/cover/Stormazy (Ft.Kehlani) - Cigarettes & Cush.jpg"
+    },
+    {
+      "title": "Trampoline",
+      "singer": "SHAED & ZAYN",
+      "src": "/media/music/SHAED & ZAYN - Trampoline.mp3",
+      "cover": "/media/cover/SHAED & ZAYN - Trampoline.jpg"
+    },
+    {
+      "title": "Dirty Water",
+      "singer": "Marc E. bassy",
+      "src": "/media/music/Marc E. bassy - Dirty Water.mp3",
+      "cover": "/media/cover/Marc E. bassy - Dirty Water.jpg"
+    }
+  ]
+}

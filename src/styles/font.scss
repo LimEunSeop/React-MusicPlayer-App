@@ -1,0 +1,10 @@
+// --------------------------------------------------------------------------
+// 믹스인 포함(include)
+// 참고: https://sass-lang.com/documentation/at-rules/mixin
+
+// 참고 웹 폰트 (https://noonnu.cc)
+// Gmarket Sans L
+@include font-face(
+  'GmarketSansLight', 
+  'https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight'
+);
